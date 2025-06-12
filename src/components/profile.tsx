@@ -55,7 +55,7 @@ export default function Profile({ user }: ProfileProps) {
                   user?.imageUrl ??
                   `https://avatar.vercel.sh/${Math.random()}.png`
                 }
-                alt={`${user?.firstName} ${user?.lastName}` ?? ""}
+                alt={`${user?.firstName ?? ""} ${user?.lastName ?? ""}`}
               />
               <AvatarFallback>{initials}</AvatarFallback>
             </Avatar>

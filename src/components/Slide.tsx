@@ -2,7 +2,12 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
-const Slide = ({ open, toggleSlideOver }) => {
+interface SlideProps {
+  open: boolean;
+  toggleSlideOver: (open: boolean) => void;
+}
+
+const Slide = ({ open, toggleSlideOver }: SlideProps) => {
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog className="relative z-10" onClose={toggleSlideOver}>
